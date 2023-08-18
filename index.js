@@ -10,6 +10,18 @@ class Car {
     }
 }
 
-const myCar = new Car('Jeep', 'Renegade', 2023);
+class ElectricCar extends Car {
+    constructor (make, model, year, range) {
+        super (make, model, year);
+        this.range = range;
+    }
 
-console.log(myCar.getDescription());
+    getDescription () {
+        return `${super.getDescription()} It has ${this.range} miles of range.`
+    }
+}
+
+const myElectricCar = new ElectricCar('Tesla', 'Model S', 2019, 300);
+
+console.log(myElectricCar.getDescription());
+
